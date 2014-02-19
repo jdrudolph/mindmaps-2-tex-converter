@@ -6,32 +6,20 @@ This python code takes as input a mindmap and converts it either into a nice Lat
 
 To create mindmaps I can recommend free mind : [project page and download](http://freemind.sourceforge.net/wiki/index.php/Main_Page)
 
-
-
-
-
-Usage: download files. Then open python interpreter e.g. ipython and type
-
-    from texcreator import *
-
-    convert_mm_2_beamer('/path/to/MindMap.mm','/path/to/beamer.tex')
-
-    convert_mm_2_tex('/path/to/MindMap.mm','/path/to/list.tex')
-
-
-On UNIX systems texcreator can be used as stand-alone (map to list only).
+On UNIX systems texcreator can be used as stand-alone.
 Run once:
 
     chmod +x texcreator.py
 
-And now invoce with:
+Type `./texcreator.py --help` for usage information
 
-    ./texcreator.py /path/to/MindMap.mm /path/to/list.tex
+Afterwards create pdf from latex file in command line as follows:
 
+    rubber -d /path/to/latex_file.tex
 
-afterwards create pdf from latex file in command line as follows:
+`rubber` is a convenient wrapper for pdflatex
+A more integrated workflow might look like:
 
-    pdflatex /path/to/latex_file.tex
-
+    ./texcreator.py /path/to/MindMap.mm --to beamer | rubber-pipe -d > presentation.pdf
 
 Enjoy!
