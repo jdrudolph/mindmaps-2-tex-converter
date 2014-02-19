@@ -17,9 +17,12 @@ Afterwards create pdf from latex file in command line as follows:
 
     rubber -d /path/to/latex_file.tex
 
-`rubber` is a convenient wrapper for pdflatex
+`rubber` is a convenient wrapper for `pdflatex` which is the standard for
+converting `.tex` to `.pdf`.
+
 A more integrated workflow might look like:
 
     ./texcreator.py /path/to/MindMap.mm --to beamer | rubber-pipe -d > presentation.pdf
 
-Enjoy!
+
+**Enjoy!**
